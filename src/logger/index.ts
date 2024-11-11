@@ -1,12 +1,12 @@
 
 import { createLogger, transports, format } from 'winston';
-import config from './../../config/config';
+import * as config from './../../config/config';
 
 const transportsArray = [];
-transportsArray.push(new transports.Console({ level: config.loggerConfiguration.consoleLogLevel }));
+transportsArray.push(new transports.Console({ level: config.data.loggerConfiguration.consoleLogLevel }));
 
-if (config.loggerConfiguration.logToFile) {
-  transportsArray.push(new transports.File({ filename: 'logs/' + config.loggerConfiguration.filename, level: config.loggerConfiguration.fileLogLevel }));
+if (config.data.loggerConfiguration.logToFile) {
+  transportsArray.push(new transports.File({ filename: 'logs/' + config.data.loggerConfiguration.filename, level: config.data.loggerConfiguration.fileLogLevel }));
 }
 
 export const logger = createLogger({

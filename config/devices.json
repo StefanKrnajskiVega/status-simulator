@@ -1,0 +1,26 @@
+{
+  "port": 3000,
+  "host": "localhost",
+  "frontOfficeAllowCors": "\"http\"://localhost:4200",
+  "transitionStates":["idle", "operational", "fault", "resetting"],
+  "devices": [
+    {
+      "name": "pic",
+      "recoveryTime": 3,
+      "resetTime": 3,
+      "transitionTime": 1
+    },
+    {
+      "name": "adc",
+      "recoveryTime": 3,
+      "resetTime": 5,
+      "transitionTime": 1
+    }
+  ],
+  "loggerConfiguration": {
+    "consoleLogLevel": "debug",
+    "logToFile": true,
+    "fileLogLevel": "debug",
+    "filename": "server.log"
+  }
+}
